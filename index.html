@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-	<div class="header">
+	<div class="header text-center">
 		<header>
 			<h1>Trivia Game</h1>
 			<h2>Final Fantasy Ed.</h2>
@@ -16,8 +16,78 @@
 	</div>
 
 	<div class="container">
-		
+		<div class="start">
+			<button class="btn start-btn" value="start">Start</button>
+		</div>
+		<div class="typeOne">
+			<div class="timeCounter text-center">
+				<h3>Time Remaining: <span id="timer">30</span>seconds</h3>
+			</div>
+			<div class="question">
+				1. When were Moogles first introduced in Final Fantasy?
+			</div>
+			<div class="answers">
+				<form>
+					<input type="radio" name="option" data-value="true" value="Final Fantasy"><span>Final Fantasy III</span>
+					<input type="radio" name="option" data-value="false"><span>Final Fantasy IV</span>
+					<input type="radio" name="option" data-value="false"><span>Final Fantasy V</span>
+					<input type="radio" name="option" data-value="false"><span>Final Fantasy II</span>
+				</form>
+			</div>
+			<div class="question">
+				2. Who is the main character of Final Fantasy VII?
+			</div>
+			<div class="answers">
+				<form>
+					<input type="radio" name="option" data-value="false"><span>Claude Strife</span>
+					<input type="radio" name="option" data-value="false"><span>Squall Leonhart</span>
+					<input type="radio" name="option" data-value="true"><span>Cloud Strife</span>
+					<input type="radio" name="option" data-value="false"><span>Zack Fair</span>
+				</form>
+			</div>
+			<div class="question">
+				3. What is the yellow bird that the characters in the game ride on called?
+			</div>
+			<div class="answers">
+				<form>
+					<input type="radio" name="option" data-value="false"><span>Moogle</span>
+					<input type="radio" name="option" data-value="true"><span>Chocobo</span>
+					<input type="radio" name="option" data-value="false"><span>Big Bird</span>
+					<input type="radio" name="option" data-value="false"><span>Cactuar</span>
+				</form>
+			</div>
+			<div class="question">
+				4. Who's grave can you find in Final Fantasy I?(hint: a non-final fantasy related character)
+			</div>
+			<div class="answers">
+				<form>
+					<input type="radio" name="option" data-value="false"><span>Vivi's grave</span>
+					<input type="radio" name="option" data-value="false"><span>Mario's grave</span>
+					<input type="radio" name="option" data-value="false"><span>Sephiroth's grave</span>
+					<input type="radio" name="option" data-value="true"><span>Link's grave</span>
+				</form>
+			</div>
+		</div>
+		<!-- <div class="typeTwo">
+			<div class="question">
+				1. When were Moogles first introduced in Final Fantasy?
+			</div>
+			<div class="answers">
+				<input type="radio" name="ff3" data-value="true">Final Fantasy III</input>
+				<input type="radio" name="ff3" data-value="false">Final Fantasy IV</input>
+				<input type="radio" name="ff3" data-value="false">Final Fantasy V</input>
+				<input type="radio" name="ff3" data-value="false">Final Fantasy II</input>
+			</div>
+		</div> -->
 	</div>
 
+	<div id="results">
+		<div id="correct"></div>
+		<div id="wrong"></div>
+
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="assets/javascript/game.js"></script>
 </body>
 </html>
