@@ -24,7 +24,6 @@ h1 {
 }
 
 h2 {
-	float: right;
 	font-family: "IM Fell English SC", "Georgia", serif;
 	font-size: 45px;
 	color: #ff751a;
@@ -37,14 +36,12 @@ h2 {
 
 .timeCounter {
 	margin-right: 10%;
-	position: static;
 }
 
 .container {
 	clear: both;
 	background-color: #ffffffaa;
 	width: 50%;
-	margin: auto;
 	margin-top: 50px;
 	border: 2px solid #666666aa;
 	border-radius: 20px;
@@ -72,4 +69,18 @@ input[name=option] {
 	background-color: #33ccffaa;
 	border-radius: 5px;
 	padding: 2px;
+}
+
+.btn {
+	margin: auto;
+	font-size: 30px;
+	padding: 20px 80px;
+}
+
+.start {
+	font-size: 26px;
+	word-spacing: 3px;
+	width: 100%;
+	margin: auto;
+	padding: 50px 0 100px 0;
 }
