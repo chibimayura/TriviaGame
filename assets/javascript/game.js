@@ -174,6 +174,7 @@ function restart(){
 	$("p").text("Click the button below to restart game");
 	$(".start-btn").text("Restart");
 	start.show();
+	timer = 30;
 }
 
 function updateQuestionAndTimer(){
