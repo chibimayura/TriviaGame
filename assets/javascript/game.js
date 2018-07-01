@@ -26,7 +26,7 @@ quizArea.hide();
 var quiz = [
 			{	question : "1. When were Moogles first introduced in Final Fantasy?",
 				choices : [
-							"Final Fantasy III", //answer
+							"Final Fantasy III",
 							"Final Fantasy IV",
 							"Final Fantasy V",
 							"Final Fantasy II"
@@ -38,7 +38,7 @@ var quiz = [
 				choices : [
 							"Claude Strife",
 							"Zack Fair",
-							"Cloud Strife", //answer
+							"Cloud Strife",
 							"Squall Leonhart"
 						],
 				correct : "Cloud Strife",
@@ -48,7 +48,7 @@ var quiz = [
 				choices : [
 							"Moogle", 
 							"Cactuar",
-							"Chocobo", //answer
+							"Chocobo",
 							"Big Bird"
 						],
 				correct : "Chocobo",
@@ -57,7 +57,7 @@ var quiz = [
 			{	question : "4. Who's grave can you find in Final Fantasy I?(hint: a non-final fantasy related character)",
 				choices : [
 							"Sephiroth", 
-							"Link", //answer
+							"Link",
 							"Vivi",
 							"Zelda"
 						],
@@ -66,17 +66,17 @@ var quiz = [
 			},
 			{	question : "5. Which character has a monkey tail?",
 				choices : [
-							"Zidane", //answer 
+							"Zidane",
 							"Tidus", 
 							"Wakka",
-							"Cat Sith"
+							"Cait Sith"
 						],
 				correct : "Zidane",
 				image: "assets/images/05.png"
 			},
 			{	question : "6. Who are the four main characters in Final Fantasy 15?",
 				choices : [
-							"Noctis, Prompto, Gladiolus, Ignis", //answer
+							"Noctis, Prompto, Gladiolus, Ignis",
 							"Cloud, Vincent, Barret, Rufus",
 							"Tidus, Rikku, Wakka, Cid", 
 							"Noctis, Tidus, Zidane, Cloud"
@@ -89,7 +89,7 @@ var quiz = [
 							"Final Fantasy X", 
 							"Final Fantasy IX",
 							"Final Fantasy XV",
-							"Final Fantasy VII" //answer
+							"Final Fantasy VII"
 						],
 				correct : "Final Fantasy VII",
 				image: "assets/images/07.jpg"
@@ -99,10 +99,30 @@ var quiz = [
 							"Cross Slash",  
 							"Finishing Touch",
 							"Blade Beam",
-							"Omni Slash" //answer
+							"Omni Slash"
 						],
 				correct : "Omni Slash",
 				image: "assets/images/08.gif"
+			},
+			{	question : "9. Who sang the song Eyes On Me in Final Fantasy 8?",
+				choices : [
+							"Utada Hikaru",  
+							"Faye Wong", 
+							"2Pac",
+							"MayBee"
+						],
+				correct : "Faye Wong",
+				image: "assets/images/09.jpg"
+			},
+			{	question : "10. Which female character died in Final Fantasy 7?",
+				choices : [
+							"Yuffie",  
+							"Tifa", 
+							"Yuna",
+							"Aeris"
+						],
+				correct : "Aeris",
+				image: "assets/images/10.gif"
 			},
 			];
 
@@ -114,15 +134,15 @@ function gameTimeCounter(){
 		timeArea.hide();
 		answerArea.empty();
 		selectChoice = true;
-		unanswer++;
 
 		questionArea.text("Times Up! The answer is: ");
 		answerArea.text(quiz[quizLoc].correct).append(`<br><img src="${quiz[quizLoc].image}">`);
 
+		unanswer++;
 		updateQuestionAndTimer();
 
 	}else if(timer < nextQuizTimer && selectChoice && quizLoc < quiz.length){ //generate next question after answer is revealed
-		updateQuestionAndTimer();
+		timer = 30;
 		quizGenerator(quizLoc);
 	}else if(timer <= nextQuizTimer && quizLoc >= quiz.length){ //shows how many questions you got right, wrong or didn't answer
 		quizArea.hide();
@@ -139,6 +159,7 @@ function gameTimeCounter(){
 function quizGenerator(num){
 	selectChoice = false;
 	answerArea.empty();
+	timeID.html(timer);
 	timeArea.show();
 
 	questionArea.text(quiz[num].question);
@@ -157,12 +178,13 @@ function restart(){
 
 function updateQuestionAndTimer(){
 	quizLoc++;
-	timer = 31;
+	timer = 30;
 }
 
 $(".start-btn").on("click", function(){
 	if(quizLoc < quiz.length){
-		startTimer = setInterval(gameTimeCounter, 500);
+		timer = 30;
+		startTimer = setInterval(gameTimeCounter, 1000);
 	}else if(quizLoc >= quiz.length){
 		quizLoc = 0;
 		resultsArea.hide();
@@ -174,7 +196,6 @@ $(".start-btn").on("click", function(){
 });
 
 $(document).on("click", ".answers", function(){
-	timer = 31;
 	selectChoice = true;
 	timeArea.hide();
 	answerArea.empty();
@@ -187,4 +208,6 @@ $(document).on("click", ".answers", function(){
 		questionArea.text("Bzzzzt! Wrong Answer");
 		wrong++;
 	}
+
+	updateQuestionAndTimer();
 });
