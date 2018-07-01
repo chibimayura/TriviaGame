@@ -175,6 +175,9 @@ function restart(){
 	$(".start-btn").text("Restart");
 	start.show();
 	timer = 30;
+	correct = 0;
+	wrong = 0;
+	unanswer = 0;
 }
 
 function updateQuestionAndTimer(){
