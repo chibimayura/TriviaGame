@@ -20,10 +20,6 @@ var start = $(".start");
 var timeID = $("#timer");
 var newQuestion, newAnswer;
 
-var bgSong = new Audio("assets/sounds/backgroundMusic.mp3");
-
-bgSong.play();
-
 timeID.html(timer);
 quizArea.hide();
 
