@@ -49,26 +49,28 @@ h2 {
 	overflow: hidden;
 }
 
-.question {
+.question, .resultsArea {
 	font-size: 26px;
 	font-weight: bold;
 	line-height: 150%;
 }
 
-.answers {
+.answerArea, .answers {
 	font-size: 20px;
 	margin-top: 10px;
 	margin-bottom: 20px;
 }
 
-input[name=option] {
-	margin-left: 40px;
+.answers {
+	padding: 20px;
+	width: 50%;
+	margin: auto;
+	text-align: center;
 }
 
-.answers span:hover{
+.answers:hover{
 	background-color: #33ccffaa;
 	border-radius: 5px;
-	padding: 2px;
 }
 
 .btn {
