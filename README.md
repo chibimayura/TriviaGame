@@ -15,3 +15,5 @@ Rules:
 		Once you finish the quiz, it will tally up your score and you can restart to get an even better score.
 	</li>
 </ol>
+
+Click <a href="https://chibimayura.github.io/TriviaGame/">here</a> to play the game!
